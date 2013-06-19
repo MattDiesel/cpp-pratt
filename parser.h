@@ -7,6 +7,7 @@
 
 #include "lexer.h"
 
+
 // #include "production.h"
 namespace pratt { namespace production {
 	class Production;
@@ -18,6 +19,20 @@ namespace pratt { namespace token {
 }}
 
 namespace pratt{
+
+
+enum Precedence {
+	BP_Assignment = 100,
+	BP_Or = 200,
+	BP_And = 300,
+	BP_Equality = 400,
+	BP_Relational = 500,
+	BP_Additive = 600,
+	BP_Multiplicative = 700,
+	BP_Exponential = 800,
+	BP_Unary = 900,
+	BP_Primary = 1000
+};
 
 
 class Parser {
