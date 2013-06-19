@@ -19,7 +19,7 @@ pratt::production::Production* Parser::Expression(int rbp) {
 
 	pratt::production::Production* left = last->Nud(this);
 
-	while (rbp < tk->Lbp()) {
+	while (tk && rbp < tk->Lbp()) {
 		delete last;
 		last = tk;
 		tk = lex.Get();
@@ -32,5 +32,8 @@ pratt::production::Production* Parser::Expression(int rbp) {
 	return left;
 }
 
+Parser::~Parser() {
+	delete tk;
+}
 
 } // namespace pratt

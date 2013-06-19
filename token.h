@@ -31,8 +31,6 @@ public:
 	virtual pratt::production::Production* Nud(pratt::Parser*);
 };
 
-typedef Token Eof;
-
 template<class P, int lbp> // Result production, Precedence
 class InfixOp : public Token {
 

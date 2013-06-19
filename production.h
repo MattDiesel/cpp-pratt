@@ -30,6 +30,11 @@ public:
 	Production* Right;
 
 	InfixOp(Production*, Production*);
+
+	~InfixOp() {
+		delete Left;
+		delete Right;
+	}
 };
 
 class Mul : public InfixOp {

@@ -29,7 +29,7 @@ public:
 	Parser(std::istream&);
 	pratt::production::Production* Expression(int);
 
-
+	~Parser();
 };
 
 
