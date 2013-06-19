@@ -37,5 +37,22 @@ pratt::production::Production* Integer::Nud(Parser* p) {
 // class InfixOp
 // template methods are in header
 
+// class Add
+
+pratt::production::Production* Add::Nud(pratt::Parser* p) {
+	return new pratt::production::Add(
+			new pratt::production::Terminal(0), 
+			p->Expression(pratt::BP_Unary));
+}
+
+// class Sub
+
+pratt::production::Production* Sub::Nud(pratt::Parser* p) {
+	return new pratt::production::Sub(
+			new pratt::production::Terminal(0), 
+			p->Expression(pratt::BP_Unary));
+}
+
+
 
 }} // namespace pratt::token

@@ -8,7 +8,7 @@
 
 
 int main(int argc, char* argv[]) {
-	std::istringstream inp("5*4+3*12");
+	std::istringstream inp("5*4+3*-12");
 
 	pratt::Parser p = pratt::Parser(inp);
 

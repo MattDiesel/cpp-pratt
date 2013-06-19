@@ -38,6 +38,17 @@ int Mul::Evaluate() {
 }
 
 
+// class Div
+
+Div::Div(Production* lhs, Production* rhs)
+		: InfixOp(lhs, rhs) {
+}
+
+int Div::Evaluate() {
+	return Left->Evaluate() / Right->Evaluate();
+}
+
+
 // class Add
 
 Add::Add(Production* lhs, Production* rhs)
@@ -46,6 +57,17 @@ Add::Add(Production* lhs, Production* rhs)
 
 int Add::Evaluate() {
 	return Left->Evaluate() + Right->Evaluate();
+}
+
+
+// class Sub
+
+Sub::Sub(Production* lhs, Production* rhs)
+		: InfixOp(lhs, rhs) {
+}
+
+int Sub::Evaluate() {
+	return Left->Evaluate() - Right->Evaluate();
 }
 
 

@@ -45,8 +45,20 @@ public:
 	}
 };
 
-typedef InfixOp<pratt::production::Add, 90> Add;
-typedef InfixOp<pratt::production::Mul, 100> Mul;
+typedef InfixOp<pratt::production::Mul, pratt::BP_Multiplicative> Mul;
+typedef InfixOp<pratt::production::Div, pratt::BP_Multiplicative> Div;
+
+class Add : public InfixOp<pratt::production::Add, pratt::BP_Additive> {
+
+public:
+	virtual pratt::production::Production* Nud(pratt::Parser*);
+};
+
+class Sub : public InfixOp<pratt::production::Sub, pratt::BP_Additive> {
+
+public:
+	virtual pratt::production::Production* Nud(pratt::Parser*);
+};
 
 
 }} // namespace pratt::token

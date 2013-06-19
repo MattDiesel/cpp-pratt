@@ -45,10 +45,26 @@ public:
 	virtual int Evaluate();
 };
 
+class Div : public InfixOp {
+
+public:
+	Div(Production*, Production*);
+
+	virtual int Evaluate();
+};
+
 class Add : public InfixOp {
 
 public:
 	Add(Production*, Production*);
+
+	virtual int Evaluate();
+};
+
+class Sub : public InfixOp {
+
+public:
+	Sub(Production*, Production*);
 
 	virtual int Evaluate();
 };
