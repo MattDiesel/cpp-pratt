@@ -16,14 +16,13 @@ I use a parser to test the features of a language I am learning. I've done equiv
 Quick explanation
 -----------------
 
-
 The basic structure is as follows:
 
-1) The lexer generated tokens from the input string
-2) If the token appears at the beginning of an expression then it's Nud method is called. If it appears infix then Led is called instead with the current left hand side as an argument.
-3) Expression parsing ends when the tokens precedence is less than the expressions.
-4) Productions are returned, which point to other productions making an AST.
-5) The AST is evaluated. 
+1. The lexer generated tokens from the input string
+2. If the token appears at the beginning of an expression then it's Nud method is called. If it appears infix then Led is called instead with the current left hand side as an argument.
+3. Expression parsing ends when the tokens precedence is less than the expressions.
+4. Productions are returned, which point to other productions making an AST.
+5. The AST is evaluated. 
 
 So in the expression 4+5*3, the following is what the call stack looks like (roughly):
 
