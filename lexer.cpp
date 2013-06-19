@@ -13,16 +13,24 @@ Lexer::Lexer(std::istream& s)
 }
 
 pratt::token::Token* Lexer::Get() {
-	char c = st.get();
+	char c = st.peek();
 
 	if (!st)
-		return new pratt::token::Eof;
-	else if (c == '*')
+		return NULL;
+	else if (c == '*') {
+		st.get();
 		return new pratt::token::Mul;
-	else if (c == '+')
+	}
+	else if (c == '+') {
+		st.get();
 		return new pratt::token::Add;
-	else
-		return new pratt::token::Integer(c - '0');
+	}
+	else {
+		int ret;
+		st >> ret;
+
+		return new pratt::token::Integer(ret);
+	}
 }
 
 
